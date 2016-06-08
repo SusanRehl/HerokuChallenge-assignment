@@ -1,4 +1,6 @@
 var http=require('http');
+var express=require('express');
+var app=express();
 
 http.createServer(function(req, res) {
   console.log('hi from server');
@@ -13,3 +15,7 @@ console.log('hello world on port 3000');
 var responseFunction = function(){
   return('from responseFunction');
 };
+
+var server=app.listen(process.env.PORT || 3000, function() {
+  console.log('hello world from port 3000');
+});
